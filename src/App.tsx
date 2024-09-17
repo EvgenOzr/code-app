@@ -28,7 +28,7 @@ function App() {
 		}
 	}
 
-	const onChangeText = (e:ChangeEvent<HTMLInputElement> ) => {
+	const onChangeText = (e:ChangeEvent<HTMLTextAreaElement> ) => {
 		const newText = e.target.value;
 		setText(newText)
 	}
@@ -47,7 +47,8 @@ function App() {
 		<div className='codeForm'>
 			<div className='inner'>
 				<h3>Кодирование строки</h3>
-				<input className='source' type="text" onChange={onChangeText}/>
+				{/* <input className='source' type="text" onChange={onChangeText}/> */}
+				<textarea className='source' onChange={onChangeText}>123</textarea>
 				<button type="button" className="btn btn-primary" onClick={codingText}>Кодировать</button>
 				<div className='result'>Результат: {codeText}</div>
 				<button type="button" className="btn btn-primary" onClick={onClipboard}>Скопировать в буфер обмена</button>
